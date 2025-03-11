@@ -1,8 +1,7 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import './App.css';
 
 function App() {
-    const [currentLogo, setCurrentLogo] = useState(40);
 
     useEffect(() => {
         const color = getComputedStyle(document.documentElement).getPropertyValue('--logo-color');
@@ -13,8 +12,7 @@ function App() {
 
     function handleOSizeChange(event) {
         const newLogoSize = event.target.value
-        setCurrentLogo(newLogoSize);
-        document.documentElement.style.setProperty('--logo-size', `${newLogoSize}}vmin`)
+        document.documentElement.style.setProperty('--logo-size', `${newLogoSize}vmin`)
     }
 
     function onSVGClick() {
@@ -34,9 +32,15 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <p onClick={handleOSizeChange}>
-                    {/* BONUS: Dynamically resizing the logo with a custom CSS Property */}
-                    <input />
+                <p>
+                    <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    defaultValue={'--logo-size'}
+                    onChange={handleOSizeChange}
+                    />
+                    
                 </p>
                 <p onClick={onSVGClick}>
                     
