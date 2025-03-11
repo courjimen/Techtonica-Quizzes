@@ -10,7 +10,7 @@ function App() {
         document.documentElement.style.setProperty('--logo-color', newColor);    }
 
     function handleOSizeChange(event) {
-        document.documentElement.style.setProperty('--logo-size', `${}vmin`)
+        // document.documentElement.style.setProperty('--logo-size', `${}vmin`)
     }
 
     function onSVGClick() {
@@ -47,9 +47,9 @@ function App() {
 
                 </p>
                 <p>
-                    <button onClick={setColor('purple')}>Color 1</button>
-                    <button onClick={setColor('red')}>Color 2</button>
-                    <button onClick={setColor('green')}>Color 3</button>
+                    <button onClick={() => setColor('purple')}>Color 1</button>
+                    <button onClick={() => setColor('red')}>Color 2</button>
+                    <button onClick={() => setColor('green')}>Color 3</button>
                 </p>
             </header>
         </div>
